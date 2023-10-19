@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(Librum VERSION 0.1 
-               LANGUAGES CXX)
+project(Librum VERSION 0.1 LANGUAGES CXX)
 
 
 # Configuration
@@ -44,7 +43,7 @@ endif()
 
 
 # Dependencies
-add_subdirectory(libs/rapidfuzz-cpp)
+#add_subdirectory(libs/rapidfuzz-cpp)
 
 
 # Build

@@ -10,8 +10,19 @@ set(QML_IMPORT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/presentation/modules ${CMAKE_CU
 
 
 # Dependencies
+list(APPEND CMAKE_PREFIX_PATH "")
+include(GNUInstallDirs)
+#find_package(Qt6 6.2 REQUIRED COMPONENTS Quick)
 find_package(QT NAMES Qt5 COMPONENTS Quick Widgets QuickControls2 REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Quick Widgets QuickControls2 REQUIRED)
+
+configure_file(
+    "${CMAKE_MODULE_PATH}/GPUIConfig.cmake.in"
+    "${CMAKE_BINARY_DIR}/GPUIConfig.cmake"
+    "${CMAKE_MODULE_PATH}/Qt6Config.cmake.in"
+    "${CMAKE_BINARY_DIR}/Qt6Config.cmake"
+
+    IMMEDIATE @ONLY)
 
 
 
